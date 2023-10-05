@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class DomicilioServiceImpl extends BaseServiceImpl<Domicilio, Long> implements DomicilioService {
 
-    @Autowired
-    private DomicilioRepository domicilioRepository;
+    //@Autowired
+    //private DomicilioRepository domicilioRepository;
 
 }
