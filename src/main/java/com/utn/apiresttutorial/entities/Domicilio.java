@@ -17,7 +17,7 @@ public class Domicilio extends Base {
     @Column(name = "calle")
     private String calle;
 
-    @Column
+    @Column(name = "numero")
     private int numero;
 
     @ManyToOne(optional = false)

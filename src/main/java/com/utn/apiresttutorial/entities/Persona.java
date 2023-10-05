@@ -32,7 +32,7 @@ public class Persona extends Base {
     @JoinTable(
             name = "persona_libro",
             joinColumns = @JoinColumn(name = "persona_id"),
-            inverseJoinColumns = @JoinColumn(name = "libro_id") //¿A qué se refiere con Inverse, por qué es Inverse?
+            inverseJoinColumns = @JoinColumn(name = "libro_id")
     )
     private List<Libro> libros = new ArrayList<Libro>();
 
