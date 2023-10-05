@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "api/v1/autores")
-public class AutorController extends BaseControllerImpl<Autor, AutorServiceImpl> {
 
+public class AutorController extends BaseControllerImpl<Autor, AutorServiceImpl>{
 }

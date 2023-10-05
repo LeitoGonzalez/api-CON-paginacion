@@ -10,7 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 @RequestMapping(path = "api/v1/personas")
+
 public class PersonaController extends BaseControllerImpl<Persona, PersonaServiceImpl> {
 }
