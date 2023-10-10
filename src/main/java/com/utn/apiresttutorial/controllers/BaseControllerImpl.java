@@ -3,6 +3,7 @@ package com.utn.apiresttutorial.controllers;
 import com.utn.apiresttutorial.entities.Base;
 import com.utn.apiresttutorial.services.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,15 @@ public abstract class BaseControllerImpl <E extends Base, S extends BaseServiceI
     public ResponseEntity<?> getAll(){
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde.\"}");
+        }
+    }
+
+    @GetMapping("/page")
+    public ResponseEntity<?> getAll(Pageable pageable){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(service.findAll(pageable));
         } catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde.\"}");
         }

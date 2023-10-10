@@ -1,6 +1,7 @@
 package com.utn.apiresttutorial.services;
 
 import com.utn.apiresttutorial.entities.Localidad;
+import com.utn.apiresttutorial.entities.Persona;
 import com.utn.apiresttutorial.repositories.BaseRepository;
 import com.utn.apiresttutorial.repositories.LocalidadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,4 +18,5 @@ public class LocalidadServiceImpl extends BaseServiceImpl<Localidad,Long> implem
         super(baseRepository);
         this.localidadRepository=localidadRepository;
     }
+
 }
