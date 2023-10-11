@@ -12,7 +12,7 @@ public interface PersonaService extends BaseService<Persona, Long> {
     List<Persona> searchDni(String dni) throws Exception;
 
 
-    Page<Persona> searchByNom(String nomyape, Pageable pageable) throws Exception;
-    Page<Persona> searchBydni(String dni, Pageable pageable) throws Exception;
+    Page<Persona> searchPaged(String nomyape, Pageable pageable) throws Exception;
+    Page<Persona> searchDniPaged(String dni, Pageable pageable) throws Exception;
 
 }

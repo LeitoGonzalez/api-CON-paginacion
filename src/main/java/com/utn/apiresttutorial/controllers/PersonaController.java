@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.*;
 
 public class PersonaController extends BaseControllerImpl<Persona, PersonaServiceImpl> {
     @GetMapping("/search")
-    public ResponseEntity<?> search(@RequestParam String nom) {
+    public ResponseEntity<?> search(@RequestParam String filtro) {
         try{
-            return ResponseEntity.status(HttpStatus.OK).body(service.search(nom));
+            return ResponseEntity.status(HttpStatus.OK).body(service.search(filtro));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\": \""+ e.getMessage() + "\"}");
         }
@@ -29,7 +29,7 @@ public class PersonaController extends BaseControllerImpl<Persona, PersonaServic
     @GetMapping("/searchpage")
     public ResponseEntity<?> searchpage(@RequestParam String nom, Pageable pageable) {
         try{
-            return ResponseEntity.status(HttpStatus.OK).body(service.searchByNom(nom, pageable));
+            return ResponseEntity.status(HttpStatus.OK).body(service.searchPaged(nom, pageable));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\": \""+ e.getMessage() + "\"}");
         }
@@ -46,6 +46,14 @@ public class PersonaController extends BaseControllerImpl<Persona, PersonaServic
         }
     }
 
+    @GetMapping("/searchdnipaged")
+    public ResponseEntity<?> searchdnipaged(@RequestParam String dni, Pageable pageable) {
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(service.searchDniPaged(dni, pageable));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\": \""+ e.getMessage() + "\"}");
+        }
+    }
 
 
 }

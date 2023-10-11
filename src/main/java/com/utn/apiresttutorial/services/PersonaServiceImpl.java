@@ -25,11 +25,11 @@ public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long> implements
 
 
     @Override
-    public List<Persona> search(String nomyape) throws Exception {
+    public List<Persona> search(String filtro) throws Exception {
         try{
-            //List<Persona> personas = personaRepository.findByNombreContainingOrApellidoContaining(nomyape, nomyape);
-            //List<Persona> personas = personaRepository.search(nomyape);
-            List<Persona> personas = personaRepository.searchNativo(nomyape);
+            //List<Persona> personas = personaRepository.findByNombreContainingOrApellidoContaining(filtro, filtro);
+            List<Persona> personas = personaRepository.search(filtro);
+            //List<Persona> personas = personaRepository.searchNativo(filtro);
             return personas;
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -39,7 +39,8 @@ public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long> implements
     @Override
     public List<Persona> searchDni(String dni) throws Exception {
         try {
-            List<Persona> personas = personaRepository.findByDni(dni);
+            //List<Persona> personas = personaRepository.findByDni(dni);
+            List<Persona> personas = personaRepository.searchDni(dni);
             return personas;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -51,11 +52,11 @@ public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long> implements
 
 
     @Override
-    public Page<Persona> searchByNom(String nomyape, Pageable pageable) throws Exception {
+    public Page<Persona> searchPaged(String nomyape, Pageable pageable) throws Exception {
         try{
             //Page<Persona> personas = personaRepository.findByNombreContainingOrApellidoContaining(nomyape, nomyape, pageable);
-            //Page<Persona> personas = personaRepository.search(nomyape, pageable);
-            Page<Persona> personas = personaRepository.searchNativo(nomyape, pageable);
+            Page<Persona> personas = personaRepository.searchPaged(nomyape, pageable);
+            //Page<Persona> personas = personaRepository.searchNativo(nomyape, pageable);
             return personas;
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -63,9 +64,10 @@ public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long> implements
     }
 
     @Override
-    public Page<Persona> searchBydni(String dni, Pageable pageable) throws Exception {
+    public Page<Persona> searchDniPaged(String dni, Pageable pageable) throws Exception {
         try {
-            Page<Persona> personas = personaRepository.findByDni(dni, pageable);
+            //Page<Persona> personas = personaRepository.findByDni(dni, pageable);
+            Page<Persona> personas = personaRepository.searchDniPaged(dni, pageable);
             return personas;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
