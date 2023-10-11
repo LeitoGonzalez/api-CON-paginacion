@@ -53,47 +53,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/personas",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"personas"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Miguel\",\r\n    \"apellido\": \"Gomez\",\r\n    \"dni\": 2342342,\r\n    \"domicilio\": {\r\n        \"calle\": \"Calle Falsa\",\r\n        \"numero\": 123,\r\n        \"localidad\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Godoy Cruz\"\r\n        }\r\n    },\r\n    \"libros\": [\r\n        {\r\n            \"titulo\": \"Divina Comedia\",\r\n            \"fecha\": \"2123213\",\r\n            \"genero\": \"Comedia\",\r\n            \"paginas\": \"1523\",\r\n            \"autores\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"nombre\": \"Roberto\",\r\n                    \"apellido\": \"Rodriguez\",\r\n                    \"biografia\": \"hola buenas\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/personas",
-							"protocol": "https",
-							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -124,10 +87,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/personas/1",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas/1",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -142,15 +105,229 @@
 					"response": []
 				},
 				{
+					"name": "searchnom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas/search?filtro=Gomez",
+							"protocol": "https",
+							"host": [
+								"api-con-paginacion-q75p",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "Gomez"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchdni",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas/searchdni?dni=44058848",
+							"protocol": "https",
+							"host": [
+								"api-con-paginacion-q75p",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"searchdni"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "44058848"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPaged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas/page?page=0&size=5&sort=id,desc",
+							"protocol": "https",
+							"host": [
+								"api-con-paginacion-q75p",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"page"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchPaged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas/searchpage?nom=Gomez&page=0&size=5&sort=id,desc",
+							"protocol": "https",
+							"host": [
+								"api-con-paginacion-q75p",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"searchpage"
+							],
+							"query": [
+								{
+									"key": "nom",
+									"value": "Gomez"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchDniPaged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas/searchdnipaged?dni=44058848&page=0&size=5&sort=id,desc",
+							"protocol": "https",
+							"host": [
+								"api-con-paginacion-q75p",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"searchdnipaged"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "44058848"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Ale\",\r\n    \"apellido\": \"Gomez\",\r\n    \"dni\": 44058848,\r\n    \"domicilio\": {\r\n        \"calle\": \"Calle Falsa\",\r\n        \"numero\": 123,\r\n        \"localidad\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Godoy Cruz\"\r\n        }\r\n    },\r\n    \"libros\": [\r\n        {\r\n            \"titulo\": \"Divina Comedia\",\r\n            \"fecha\": \"2123213\",\r\n            \"genero\": \"Comedia\",\r\n            \"paginas\": \"1523\",\r\n            \"autores\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"nombre\": \"Roberto\",\r\n                    \"apellido\": \"Rodriguez\",\r\n                    \"biografia\": \"hola buenas\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas",
+							"protocol": "https",
+							"host": [
+								"api-con-paginacion-q75p",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/personas/1",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas/1",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -179,10 +356,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/personas/1",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/personas/1",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -207,10 +384,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/autores",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/autores",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -244,10 +421,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/autores",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/autores",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -278,10 +455,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/autores/1",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/autores/1",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -301,10 +478,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/autores/2",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/autores/2",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -333,10 +510,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/autores/1",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/autores/1",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -361,10 +538,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/localidades",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/localidades",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -398,10 +575,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/localidades",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/localidades",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -432,10 +609,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/localidades/1",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/localidades/1",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -455,10 +632,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/localidades/3",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/localidades/3",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
@@ -487,10 +664,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-sin-paginacion-aaa.onrender.com/api/v1/localidades/1",
+							"raw": "https://api-con-paginacion-q75p.onrender.com/api/v1/localidades/1",
 							"protocol": "https",
 							"host": [
-								"api-sin-paginacion-aaa",
+								"api-con-paginacion-q75p",
 								"onrender",
 								"com"
 							],
